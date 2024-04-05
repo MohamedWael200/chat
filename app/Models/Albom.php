@@ -9,7 +9,7 @@ class Albom extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name' , 'cover'];
 
     public function pictures()
     {

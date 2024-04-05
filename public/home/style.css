@@ -141,6 +141,7 @@ header{
 }
 .card .info h1{
   margin-bottom: 20px;
+    text-align: center;
 }
 .card .info p{
   letter-spacing: 1px;
@@ -157,8 +158,31 @@ header{
   font-weight: bold;
   cursor: pointer;
   transition: 0.4s ease-in-out;
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .card .info .btn:hover{
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+
+.update{
+    color: #ffffff;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+.btns {
+    display: inline-block;
+}
+
+
+.move {
+    color: #ffffff;
+    list-style: none;
+    text-decoration: none;
+}
+
+.empty {
+    color: white;
+    margin-top: 100px;
 }

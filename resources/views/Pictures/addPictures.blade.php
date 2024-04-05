@@ -7,7 +7,8 @@
 	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
-	<link rel="stylesheet" href="{{asset('form/style.css')}}">
+
+    <link rel="stylesheet" href="{{asset('form/style.css')}}">
 
 	<title> Add Admin Info</title>
 </head>
@@ -35,6 +36,7 @@
                         <button class="btn">Send</button>
                     </div>
                 </form>
+
             </div>
 
 

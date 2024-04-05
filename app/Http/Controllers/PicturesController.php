@@ -54,7 +54,7 @@ class PicturesController extends Controller
 
     public function AllPic($id) {
         $details = Albom::findorfail($id)->pictures;
-        return view('pictures',['details' => $details]);
+        return view('pictures',['details' => $details ]);
     }
 
 

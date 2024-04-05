@@ -19,11 +19,12 @@
 			<!-- form Add Info -->
 			<div class="contact-box">
 			<div class="lefts"></div>
-                <form action="{{route('add-albom')}}" method="post">
+                <form action="{{route('add-albom')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="right">
                         <h2>Info</h2>
                         <input type="text" name="name" class="field" placeholder="Album Name">
+                        <input type="file" name="photo" class="field" >
                         <button class="btn">Send</button>
                     </div>
                 </form>

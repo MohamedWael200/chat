@@ -32,14 +32,14 @@ Route::post('change',[AlbomController::class,'changePicAlbom'])->name('changePic
 
 Route::get('/AddAlbom',[AlbomController::class, 'create'])->name('create');
 Route::post('/storeAblom',[AlbomController::class,'store'])->name('add-albom');
-Route::get('/editAlbom/{id}',[AlbomController::class,'edit'])->name('editAlbom');
+Route::get('/editAlbom/{id}',[AlbomController::class,'edit'])->name('editAlboms');
 Route::post('updateAlbom/{id}',[AlbomController::class,'update'])->name('updateAlbom');
 Route::post('destroies/{id}',[AlbomController::class,'destories'])->name('destroyAlbum');
 
 
 Route::get('/AddPicture',[PicturesController::class, 'create'])->name('create.Picture');
 Route::post('/storePicture',[PicturesController::class,'addPicture'])->name('add-Picture');
-Route::get('/editPicture/{id}',[PicturesController::class,'edit'])->name('editAlbom');
+Route::get('/editPicture/{id}',[PicturesController::class,'edit'])->name('editPic');
 Route::post('updatePicture/{id}',[PicturesController::class,'updatePicture'])->name('updatePicture');
 Route::post('destroy/{id}',[PicturesController::class,'destroyPic'])->name('destroy');
 

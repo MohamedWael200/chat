@@ -66,8 +66,9 @@ body{
   opacity: 1;
   transform: translateY(0px);
 }
-.card .info h1{
+.card .info h2{
   margin: 0;
+    text-align: center;
 }
 .card .info p{
   letter-spacing: 1px;
@@ -88,3 +89,4 @@ body{
 .card .info .btn:hover{
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
 }
+

@@ -17,6 +17,7 @@
 
     </ul>
 </header>
+
   <div class="warpper">
       @foreach($details as $detail)
     <div class="card">
@@ -45,7 +46,9 @@
                               @csrf
                               <button type="submit" class="btn btn-danger" style="color: white;background-color: #620008;border: none;">Delete</button>
                           </form>
-                          <button type="button" class="btn btn-primary " style="color: white;background-color: #00064b;border: none;">Save changes</button>
+                          <button type="button" class="btn btn-primary" style="border: none;background-color: #1a202c;">
+                              <a class="update" href="{{ route('editPic',$detail->id) }}">Update Pictures</a>
+                          </button>
                       </div>
                   </div>
               </div>

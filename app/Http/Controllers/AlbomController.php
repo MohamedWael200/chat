@@ -15,7 +15,8 @@ class AlbomController extends Controller
     {
         $albums = Albom::all();
         $picture = Pictures::first();
-        return view('index' , ['albums' => $albums , 'picture' => $picture]);
+        $count = Albom::count();
+        return view('index' , ['albums' => $albums , 'picture' => $picture , 'count' => $count]);
     }
 
     public function create()
@@ -26,11 +27,11 @@ class AlbomController extends Controller
     public function store(Request $request)
     {
 
-        $request->validate([
-            'name' => 'required|string|max:255',
+        $path = $this->uploadImage($request->photo,'AlbomPCover');
+        $Albom = Albom::create([
+            'name' => $request->name,
+            'cover' =>$path,
         ]);
-
-        Albom::create($request->all());
 
         return redirect()->route('index');
     }
@@ -55,18 +56,16 @@ class AlbomController extends Controller
         $albom = Albom::all();
         $info = Albom::findOrFail($id);
         return view('move',['albom' => $albom , 'info' => $info]);
-        dd($info);
     }
 
-    public function changePicAlbom(Request $request, $id){
+    public function changePicAlbom(Request $request){
 //        $albom = Albom::findorfail($id)->pictures;
-        $albumId = $request->input('albom');
+        $albumId = $request->input('albomId');
         $pictures = Pictures::where('albom_id', $albumId)->get();
-        dd($albumId);
         foreach ($pictures as $picture) {
-            dd($picture->albom_id);
             $picture->update(['albom_id' => $request->albom]);
         }
+        Albom::destroy($albumId);
 //        foreach ($albom as $pic){
 //            $pic->update([
 //                'albom_id' => $request->albom,

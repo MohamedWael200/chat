@@ -20,16 +20,18 @@
         </ul>
     </header>
   <div class="warpper">
+      @if($count > 0)
       @foreach($albums as $album)
     <div class="card">
-      <img src="{{asset('AlbomPictures/'.$picture->path)}}" alt="">
+      <img src="{{asset('AlbomPCover/'.$album->cover)}}" alt="">
       <div class="info">
-        <h1>{{$album->name}}</h1>
-
-        <a href="{{route('collection',$album->id)}}" class="btn">Show Pictures</a>
+        <h2>{{$album->name}}</h2>
+          <div class="btns">
           <button type="button" class="btn btn-primary" style="margin-top: 120px;margin-right: 30px" data-bs-toggle="modal" data-bs-target="#exampleModal">
               Event Click
           </button>
+        <a href="{{route('collection',$album->id)}}" class="btn"> Pictures</a>
+          </div>
       </div>
 
     </div>
@@ -50,13 +52,16 @@
                               @csrf
                               <button type="submit" class="btn btn-danger" style="color: white;background-color: #620008;border: none;">Delete</button>
                           </form>
-                          <button type="button" class="btn btn-primary"><a href="{{ route('movePicture',$album->id) }}">Move Picture</a></button>
+                          <button type="button" class="btn btn-primary" style="border: none;background-color: #00478d;"><a class="move" href="{{ route('movePicture',$album->id) }}">Move Picture</a></button>
+                          <button type="button" class="btn btn-primary" style="border: none;background-color: #1a202c;"><a class="update" href="{{ route('editAlboms',$album->id) }}">Update</a></button>
                       </div>
                   </div>
               </div>
           </div>
       @endforeach
-
+      @else
+          <h1 class="empty"> No Album Yet </h1>
+      @endif
   </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

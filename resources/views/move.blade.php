@@ -22,6 +22,7 @@
             @csrf
             <div class="right">
                 <h2>Info</h2>
+                <input type="hidden" name="albomId" value="{{$info->id}}">
                 <select name="albom" id="res" class="field" width="100" >
                     @foreach($albom as $alboms)
                         <option value="{{$alboms->id}}">
